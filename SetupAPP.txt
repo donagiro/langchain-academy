@@ -1,0 +1,7 @@
+Clone repo
+
+git clone https://github.com/langchain-ai/langchain-academy.git
+$ cd langchain-academy
+
+Create an environment and install dependencies
+$ pip install -r requirements.txt
