@@ -138,7 +138,12 @@ class UpdateMemory(TypedDict):
     update_type: Literal['user', 'todo', 'instructions']
 
 # Initialize the model
-model = ChatOpenAI(model="gpt-4o", temperature=0)
+# model = ChatOpenAI(model="gpt-4o", temperature=0)
+model = ChatOpenAI(
+    model="deepseek-chat",
+    temperature=0,
+    base_url="https://api.deepseek.com/"  # Add DeepSeek's API base URL
+)
 
 ## Create the Trustcall extractors for updating the user profile and ToDo list
 profile_extractor = create_extractor(
@@ -372,7 +377,7 @@ def update_instructions(state: MessagesState, config: RunnableConfig, store: Bas
     return {"messages": [{"role": "tool", "content": "updated instructions", "tool_call_id":tool_calls[0]['id']}]}
 
 # Conditional edge
-def route_message(state: MessagesState, config: RunnableConfig, store: BaseStore) -> Literal[END, "update_todos", "update_instructions", "update_profile"]:
+def route_message(state: MessagesState, config: RunnableConfig, store: BaseStore) -> Literal[END, "update_todos", "update_instructions", "update_profile"]: # pyright: ignore[reportInvalidTypeForm]
 
     """Reflect on the memories and chat history to decide whether to update the memory collection."""
     message = state['messages'][-1]

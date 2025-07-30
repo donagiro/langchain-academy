@@ -6,7 +6,12 @@ from langgraph.store.base import BaseStore
 import configuration
 
 # Initialize the LLM
-model = ChatOpenAI(model="gpt-4o", temperature=0) 
+# model = ChatOpenAI(model="gpt-4o", temperature=0)
+model = ChatOpenAI(
+    model="deepseek-chat",
+    temperature=0,
+    base_url="https://api.deepseek.com/"  # Add DeepSeek's API base URL
+)
 
 # Chatbot instruction
 MODEL_SYSTEM_MESSAGE = """You are a helpful assistant with memory that provides information about the user. 

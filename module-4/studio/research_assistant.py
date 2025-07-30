@@ -12,8 +12,11 @@ from langgraph.constants import Send
 from langgraph.graph import END, MessagesState, START, StateGraph
 
 ### LLM
-
-llm = ChatOpenAI(model="gpt-4o", temperature=0) 
+llm = ChatOpenAI(
+    model="deepseek-chat",
+    temperature=0,
+    base_url="https://api.deepseek.com/"  # Add DeepSeek's API base URL
+) 
 
 ### Schema 
 
