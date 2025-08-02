@@ -1,4 +1,5 @@
 langgraph
+langchain
 langgraph-prebuilt
 langgraph-sdk
 langgraph-checkpoint-sqlite
@@ -11,3 +12,8 @@ tavily-python
 wikipedia
 trustcall
 langgraph-cli[inmem]
+langmem
+langgraph-supervisor
+langgraph-swarm
+langchain-mcp-adapters
+agentevals
