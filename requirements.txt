@@ -10,4 +10,4 @@ notebook
 tavily-python
 wikipedia
 trustcall
-langgraph-cli[inmem]
+langgraph-cli
